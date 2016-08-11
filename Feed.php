@@ -18,6 +18,8 @@ class Feed extends DOMDocument
     /** @var DomElement $item */
     private $item;
 
+    public $standards = [];
+
     public function __construct()
     {
         parent::__construct();
@@ -26,6 +28,11 @@ class Feed extends DOMDocument
         $rssElement = $this->createElement('rss');
         $rssElement->setAttribute('version', '2.0');
         $rssElement->setAttribute('xmlns:atom', 'http://www.w3.org/2005/Atom');
+
+        foreach($this->standards as $name => $standard){
+            $rssElement->setAttribute($name, $standard);
+        }
+
         $this->rss = $this->appendChild($rssElement);
     }
 
