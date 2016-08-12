@@ -8,7 +8,7 @@
         "feed",
         "generator"
     ],
-    "homepage": "https://github.com/zelenin/RSS-Generator",
+    "homepage": "https://github.com/bobroid/RSS-Generator",
     "time": "2014-11-15",
     "license": "MIT",
     "authors": [
@@ -17,11 +17,16 @@
             "email": "aleksandr@zelenin.me",
             "homepage": "http://zelenin.me",
             "role": "Developer"
+        },
+        {
+            "name": "Nikolai Gilko",
+            "email": "n.gilko@gmail.com",
+            "role": "added some features"
         }
     ],
     "support": {
-        "issues": "https://github.com/zelenin/RSS-Generator/issues",
-        "source": "https://github.com/zelenin/RSS-Generator"
+        "issues": "https://github.com/bobroid/RSS-Generator/issues",
+        "source": "https://github.com/bobroid/RSS-Generator"
     },
     "require": {
         "php": ">=5.4.0"
