@@ -20,8 +20,14 @@ class Feed extends DOMDocument
 
     public $standards = [];
 
-    public function __construct()
+    public function __construct($attributes = [])
     {
+        foreach($attributes as $attribute => $value){
+            if(isset($this->$attribute)){
+                $this->$attribute = $value;
+            }
+        }
+
         parent::__construct();
         $this->formatOutput = true;
         $this->encoding = 'utf-8';
