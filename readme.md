@@ -2,9 +2,19 @@
 
 PHP library for generating of RSS feeds. Full support of [RSSboard specification](http://www.rssboard.org/rss-specification)
 
-## Usage
+## Installation
 
-See example.php
+```
+php composer.phar require maldinsky/rss-generator "~2.1.3"
+```
+
+or add
+
+```
+"maldinsky/rss-generator": "~2.1.3"
+```
+
+to the require section of your composer.json
 
 ## Development
 

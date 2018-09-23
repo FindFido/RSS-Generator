@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin;
+namespace Maldinsky\Rss;
 
 use DateTime;
 use DOMDocument;
@@ -9,7 +9,7 @@ use Exception;
 
 class Feed extends DOMDocument
 {
-    const VERSION = '2.1.1';
+    const VERSION = '2.1.3';
     /** @var DomElement $rss */
     private $rss;
     /** @var DomElement $channel */
@@ -46,14 +46,6 @@ class Feed extends DOMDocument
     {
         $channelElement = $this->createElement('channel');
         $this->channel = $this->rss->appendChild($channelElement);
-
-        $this->addChannelElement('atom:link', '', [
-            'href' => $href
-                ? $href
-                : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
-            'rel' => 'self',
-            'type' => 'application/rss+xml'
-        ]);
         $this->addChannelGenerator();
         $this->addChannelDocs();
         return $this;
