@@ -205,9 +205,11 @@ class Feed extends DOMDocument
         return $this->addChannelElementWithIdentSub('skipDays', 'day', $value);
     }
 
-    public function addItem()
+    public function addItem($turbo = false)
     {
         $item = $this->createElement('item');
+        if ($turbo)
+            $item->setAttribute('turbo', 'true');
         $this->item = $this->channel->appendChild($item);
         return $this;
     }
