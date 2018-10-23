@@ -9,7 +9,7 @@ use Exception;
 
 class Feed extends DOMDocument
 {
-    const VERSION = '2.1.3';
+    const VERSION = '2.1.4';
     /** @var DomElement $rss */
     private $rss;
     /** @var DomElement $channel */
@@ -19,6 +19,8 @@ class Feed extends DOMDocument
     private $item;
 
     public $standards = [];
+
+    public $elemNotEncode = [];
 
     public function __construct($attributes = [])
     {
@@ -53,7 +55,8 @@ class Feed extends DOMDocument
 
     public function addChannelElement($element, $value, $attr = array())
     {
-        $element = $this->createElement($element, $this->normalizeString($value));
+        $element = ($this->elemNotEncode && in_array($element, $this->elemNotEncode))? $this->createElement($element, $value) :$this->createElement($element, $this->normalizeString($value));
+
         foreach ($attr as $key => $value) {
             $element->setAttribute($key, $this->normalizeString($value));
         }
