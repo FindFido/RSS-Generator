@@ -9,7 +9,7 @@ use Exception;
 
 class Feed extends DOMDocument
 {
-    const VERSION = '2.1.4';
+    const VERSION = '2.1.5';
     /** @var DomElement $rss */
     private $rss;
     /** @var DomElement $channel */
