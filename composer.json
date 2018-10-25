@@ -1,7 +1,7 @@
 {
     "name": "maldinsky/rss-generator",
     "description": "PHP class for generating of RSS feeds. Full support of [RSSboard specification](http://www.rssboard.org/rss-specification)",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "type": "library",
     "keywords": [
         "rss",
@@ -9,7 +9,7 @@
         "generator"
     ],
     "homepage": "https://github.com/maldinsky/RSS-Generator",
-    "time": "2018-10-23",
+    "time": "2018-10-25",
     "license": "MIT",
     "authors": [
         {
