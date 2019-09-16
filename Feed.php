@@ -1,6 +1,6 @@
 <?php
 
-namespace Maldinsky\Rss;
+namespace mitrii\feed;
 
 use DateTime;
 use DOMDocument;
