@@ -208,23 +208,34 @@ class Feed extends DOMDocument
         return $this->addChannelElementWithIdentSub('skipDays', 'day', $value);
     }
 
-    public function addItem($turbo = false)
+    public function addItem($attributes = [])
     {
         $item = $this->createElement('item');
-        if ($turbo)
-            $item->setAttribute('turbo', 'true');
+        foreach ($attributes as $key => $value)
+        {
+            $item->setAttribute($key, $value);
+        }
+
         $this->item = $this->channel->appendChild($item);
         return $this;
     }
 
     public function addItemElement($element, $value, $attr = array())
     {
-        if($this->elemNotEncode && in_array($element, $this->elemNotEncode)){
-            $element = $this->createElement($element);
-            $element->appendChild($this->createCDATASection($value));
-        } else {
-            $element = $this->createElement($element, $this->normalizeString($value));
+        $element = $this->createElement($element, $this->normalizeString($value));
+
+        foreach ($attr as $key => $value) {
+            $element->setAttribute($key, $this->normalizeString($value));
         }
+        $this->item->appendChild($element);
+        return $this;
+    }
+
+    public function addItemSDATAElement($element, $value, $attr = array())
+    {
+
+        $element = $this->createElement($element);
+        $element->appendChild($value);
 
         foreach ($attr as $key => $value) {
             $element->setAttribute($key, $this->normalizeString($value));
