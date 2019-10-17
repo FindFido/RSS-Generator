@@ -1,6 +1,6 @@
 <?php
 
-namespace Mitrii\Feed;
+namespace Zelenin\Feed;
 
 use DateTime;
 use DOMDocument;
