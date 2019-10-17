@@ -1,6 +1,6 @@
 <?php
 
-namespace Zelenin\Feed;
+namespace Zelenin;
 
 use DateTime;
 use DOMDocument;
